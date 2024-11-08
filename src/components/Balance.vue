@@ -1,17 +1,18 @@
 <template>
-    <div class="balance-container">
-        <h3 class="mainTitle">Your Balance</h3>
-        <p id="balance" class="balance">$0.00</p>
-    </div>
+    <h4 class="mainTitle">Your Balance</h4>
+    <p class="totalMoney">${{ total }}</p>
 </template>
 
 <script setup>
-
+import { defineProps } from 'vue';
+const props = defineProps({
+    total: {
+        type: Number,
+        Required: true,
+    },
+});
 </script>
 
 <style lang="css" scoped>
-.balance{
-    font-size: 22px;
-    font-weight: 600;
-}
+
 </style>
