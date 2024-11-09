@@ -1,18 +1,33 @@
 <template>
-    <h3>Add new transaction</h3>
-    <form action="form" @submit.prevent="onSubmit">
-        <div class="form-control">
-            <label for="text">Text</label>
-            <input type="text" id="text" placeholder="Enter text">
+    <h3>Thêm khoản chi</h3>
+    <form 
+    action="form" 
+    @submit.prevent="onSubmit
+    ">
+        <div 
+        class="form-control">
+            <label 
+            for="text">Tên khoản chi</label>
+            <input
+            type="text" 
+            id="text" 
+            placeholder="Nhập tiêu đề ..."
+            v-model="text"
+            >
         </div>
-        <div class="form-control">
-            <label for="amount">
-                Amount <br/>
-                (negative - expense, positive - income)
+        <div 
+        class="form-control">
+            <label 
+            for="amount">
+                Chi phí 
             </label>
-            <input type="text" id="amount" placeholder="Enter amount..." v-model="amount">
+            <input 
+            type="text" 
+            id="amount" 
+            placeholder="Nhập chi phí..." 
+            v-model="amount">
         </div>
-        <button class="btn-add">Add transaction</button>
+        <button class="btn-add">Thêm khoản cần chi</button>
     </form>
 </template>
 

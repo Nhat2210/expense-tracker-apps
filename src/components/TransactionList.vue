@@ -1,5 +1,5 @@
 <template>
-    <h3>History</h3>
+    <h3>Lịch sử chi tiêu</h3>
     <ul id="list" class="list">
         <li
         v-for="transaction in transactions"
@@ -8,25 +8,23 @@
         ">
         {{ transaction.text }} 
         <span>${{ transaction.amount }}</span>
-        <button class="delete btn" @click="deleteTransaction(transaction.id)">x</button>
+        <button class="delete btn">x</button>
         </li>
     </ul>
 </template>
 
 <script setup>
-    import { defineProps } from 'vue';
-    const props = defineProps({
-        transactions:{
-            type: Array,
-            Required: true,
-        }
-    });
-    
-    const emit = defineEmits([transactionDeleted]);
+import { defineProps } from 'vue';
 
-    const deleteTransaction = (id) =>{
-        emit('transactionDelted', id);  
+const props = defineProps({
+    transactions:{
+        type: Array,
+        Required: true,
     }
+});
+    
+
+
 </script>
 
 <style lang="css" scoped>

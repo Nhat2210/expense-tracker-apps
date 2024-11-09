@@ -6,7 +6,7 @@
         </div>
         <div class="expense">
             <h4>Expense</h4>
-            <p id="money-minus" class="money minus">-${{ expense }}</p>
+            <p id="money-minus" class="money minus">-${{ expenses }}</p>
         </div>
     </div>
 </template>
@@ -18,7 +18,7 @@ const props = defineProps({
         type: Number,
         required: true,
     },
-    expense:{
+    expenses:{
         type:Number,
         required: true,
     }
