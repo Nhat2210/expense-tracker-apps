@@ -1,7 +1,7 @@
 <template>
     <h3>Thêm khoản chi</h3>
     <form 
-    action="form" 
+    id="form" 
     @submit.prevent="onSubmit
     ">
         <div 

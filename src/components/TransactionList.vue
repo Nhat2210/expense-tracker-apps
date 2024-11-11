@@ -8,7 +8,7 @@
         ">
         {{ transaction.text }} 
         <span>${{ transaction.amount }}</span>
-        <button class="delete btn">x</button>
+        <button class="delete btn" @click="deleteTransaction(transaction.id)">x</button>
         </li>
     </ul>
 </template>
@@ -19,11 +19,15 @@ import { defineProps } from 'vue';
 const props = defineProps({
     transactions:{
         type: Array,
-        Required: true,
+        required: true,
     }
 });
-    
 
+const emit = defineEmits(['transactionDeleted']);
+
+const deleteTransaction = (id) => {
+    emit('transactionDeleted', id);
+};
 
 </script>
 

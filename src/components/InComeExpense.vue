@@ -1,11 +1,11 @@
 <template>
-    <div class="inc-exp-container">
+    <div class="container">
         <div class="income">
-            <h4>Income</h4>
-            <p class="money plus" id="money-plus">+${{ income }}</p>
+            <h4>Thu nhập</h4>
+            <p class="money plus" id="money plus">+${{ income }}</p>
         </div>
         <div class="expense">
-            <h4>Expense</h4>
+            <h4>Chi tiêu</h4>
             <p id="money-minus" class="money minus">-${{ expenses }}</p>
         </div>
     </div>
@@ -26,10 +26,6 @@ const props = defineProps({
 </script>
 
 <style lang="css" scoped>
-.inc-exp-container{
-    display: flex;
-    justify-content: space-around;
-}
 .money{
     text-transform: uppercase;
 }
