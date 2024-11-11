@@ -1,6 +1,6 @@
 <template>
     <h4 class="mainTitle">Số dư hiện tại của bạn</h4>
-    <p class="totalMoney">${{ total }}</p>
+    <p class="totalMoney">&nbsp;&nbsp;&nbsp;${{ total }}</p>
 </template>
 
 <script setup>
@@ -14,5 +14,13 @@ const props = defineProps({
 </script>
 
 <style lang="css" scoped>
+.mainTitle{
+    color: #384B70;
+    font-size: 20px;
 
+}
+.totalMoney{
+    color: #1A1A1D;
+    padding: 10px 0;
+}
 </style>

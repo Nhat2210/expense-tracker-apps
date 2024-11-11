@@ -1,5 +1,5 @@
 <template>
-    <h3>Lịch sử chi tiêu</h3>
+    <h3 class="mainTitle">Lịch sử chi tiêu</h3>
     <ul id="list" class="list">
         <li
         v-for="transaction in transactions"
@@ -32,5 +32,19 @@ const deleteTransaction = (id) => {
 </script>
 
 <style lang="css" scoped>
-
+.mainTitle{
+    color: #384B70;
+}
+.list{
+    height: 100px;
+}
+.list li{
+    list-style-type: none;
+}
+.minus{
+    color: red;
+}
+.plus{
+    color: green;
+}
 </style>

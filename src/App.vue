@@ -1,6 +1,6 @@
 <template>
   <Header/>
-  <div class="container">
+  <div class="main_container">
     <Balance :total="total" />
     <InComeExpense :income="+income" :expenses="-expenses"/>
     <TransactionList 
@@ -69,5 +69,8 @@ const generateUniqueId = () => {
 
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
+.main_container{
+  margin-left: 35%;
+}
 </style>
