@@ -1,4 +1,5 @@
 <template>
+<div class="body">
   <Header/>
   <div class="main_container">
     <Balance :total="total" />
@@ -9,6 +10,8 @@
     />
     <AddTransaction @transactionSubmitted="handleTransactionSubmitted"/>
   </div>
+</div>
+
 </template>
 
 <script setup>
@@ -53,7 +56,6 @@ const handleTransactionSubmitted = (transactionsData) => {
     text: transactionsData.text,
     amount: transactionsData.amount,
   });
-  savedTransactionsToLocalStorage();
   toast.success('Thêm thành công!')
 };
 
@@ -70,7 +72,17 @@ const generateUniqueId = () => {
 </script>
 
 <style lang="scss" scoped>
+.body{
+  width: 500px;
+  height: 100%;
+  background: #C2FFC7;
+  margin: 0 auto;
+  padding-top: 10px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}
 .main_container{
-  margin-left: 35%;
+  padding: 0 90px 20px;
 }
 </style>

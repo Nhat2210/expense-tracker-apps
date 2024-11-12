@@ -1,10 +1,11 @@
 <template>
     <h4 class="mainTitle">Số dư hiện tại của bạn</h4>
-    <p class="totalMoney">&nbsp;&nbsp;&nbsp;${{ total }}</p>
+    <p class="totalMoney">&nbsp;&nbsp;&nbsp;${{ formatCurrency(total) }}</p>
 </template>
 
 <script setup>
 import { defineProps } from 'vue';
+import { formatCurrency } from '@/helpers/formatCurrency';
 const props = defineProps({
     total: {
         type: Number,

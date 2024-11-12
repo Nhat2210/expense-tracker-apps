@@ -7,7 +7,7 @@
         :class="transaction.amount < 0 ? 'minus' : 'plus'
         ">
         {{ transaction.text }} 
-        <span>${{ transaction.amount }}</span>
+        <span class="color">{{ formatCurrency(transaction.amount) }}$</span>
         <button class="delete btn" @click="deleteTransaction(transaction.id)">x</button>
         </li>
     </ul>
@@ -15,19 +15,22 @@
 
 <script setup>
 import { defineProps } from 'vue';
-
+import { formatCurrency } from '@/helpers/formatCurrency';
 const props = defineProps({
     transactions:{
         type: Array,
         required: true,
-    }
+    },
 });
+
+
 
 const emit = defineEmits(['transactionDeleted']);
 
 const deleteTransaction = (id) => {
     emit('transactionDeleted', id);
 };
+
 
 </script>
 
@@ -36,15 +39,31 @@ const deleteTransaction = (id) => {
     color: #384B70;
 }
 .list{
-    height: 100px;
+    color: #384B70;
 }
 .list li{
     list-style-type: none;
+    margin: 10px 0;
+    font-size: 14px;
 }
-.minus{
+.minus .color{
     color: red;
+    margin-left: 5px;
 }
-.plus{
+.plus .color{
     color: green;
+    margin-left: 5px;
+}
+.delete{
+    margin-left: 5px;
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.delete:hover{
+    color: red;
+    background-color: #FFF8DE;
 }
 </style>

@@ -32,7 +32,7 @@
             v-model="amount">
             
         </div>
-        <button class="btn-add">Thêm khoản cần chi</button>
+        <div class="button"><button class="btn-add">Thêm chi tiêu</button></div>
     </form>
 </template>
 
@@ -77,6 +77,7 @@ const onSubmit = () => {
     padding: 10px 0;
 }
 input{
+    width: 100%;
     border: none;
     padding: 8px 50px 8px 20px;
     background-color: #6A9AB0;
@@ -85,22 +86,40 @@ input{
 }
 input:focus{
     outline: none;
+    background-color: #6A9AB0;
 }
 input::placeholder{
     color: #fff;
     opacity: 0.8;
 }
-button{
+input:last-child{
+    position: relative;
+}
+input:last-child::before{
+    content: "VND";
+    position: absolute;
+    color: red;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+.btn-add{
     padding: 10px 20px;
     margin-left: 20px;
     margin-top: 20px;
     border-radius: 5px;
     border: none;
     background: #EAD8B1;
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom: 50px;
 }
-button:hover{
+.btn-add:hover{
     background: #FFF8DE;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>
